@@ -25,9 +25,6 @@ module.exports = {
   plugins: [
     'react'
   ],
-    rules: {
-    "react-hooks/rules-of-hooks": "error",
-  },
   settings: {
     react: {
       version: 'detect'

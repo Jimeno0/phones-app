@@ -5,5 +5,6 @@ const Dot = styled.div`
   height: 24px;
   border-radius: 50%;
   background-color: ${({ color }) => color && color};
+  border: 1px solid gray;
 `
 export { Dot }
