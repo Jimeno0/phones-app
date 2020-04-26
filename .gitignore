@@ -1,0 +1,20 @@
+# dependencies
+/phones-frontend/node_modules
+/phones-backend/node_modules
+
+# production
+/phones-frontend/build
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vim
+*.swp
+*.swo
+
+
+# cypress
+/phones-frontend/cypress/videos
+/phones-frontend/cypress/screenshots
