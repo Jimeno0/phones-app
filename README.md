@@ -8,11 +8,14 @@
     ```bash
       docker-compose -f docker-compose.prod.yml up --build
     ```
+    then visit [http://localhost:3000](http://localhost:3000)
 
 * For development use run:
     ```bash
       docker-compose up --build
     ```
+    then visit [http://localhost:3000](http://localhost:3000)
+
 
 ## Tests
 
