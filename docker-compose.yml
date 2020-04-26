@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+    webapp:
+        build: ./phones-frontend 
+        ports:
+            - "8000:8000"
+        labels:
+            NAME: "webapp"
+        command: ["serve", "-p", "8000", "-s", "build", "-n"]
+        depends_on:
+            - api
+        volumes: 
+            - ./phones-frontend:/app
+            - /app/node_modules
+
+    api:
+        build: ./phones-backend 
+        ports:
+            - "8080:8080"
+        labels:
+            NAME: "api"
+        command: sh -c "yarn populate && yarn serve"
+        depends_on:
+            - database
+        environment:
+            - DB_URL='mongodb://database:27017/guidesmiths'
+            - PORT=8080
+        volumes: 
+            - ./phones-backend:/app
+            - /app/node_modules
+
+    database:
+        image: "mongo:3.6.17-xenial"
+        ports:
+            - "27018:27017"
