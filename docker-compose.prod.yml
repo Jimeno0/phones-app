@@ -5,8 +5,8 @@ services:
           context: ./phones-frontend
           dockerfile: Dockerfile.prod
         ports:
-            - "8000:8000"
-        command: ["serve", "-p", "8000", "-s", "build", "-n"]
+            - "3000:3000"
+        command: ["serve", "-p", "3000", "-s", "build", "-n"]
         depends_on:
             - api
 
