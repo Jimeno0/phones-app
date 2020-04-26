@@ -23,9 +23,11 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react',
-    'esling-plugin-cypress'
+    'react'
   ],
+    rules: {
+    "react-hooks/rules-of-hooks": "error",
+  },
   settings: {
     react: {
       version: 'detect'

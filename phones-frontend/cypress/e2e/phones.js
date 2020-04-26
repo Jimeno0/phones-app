@@ -2,7 +2,7 @@ const cardSelector = '[data-testid=phone-card]'
 const detailSelector = '[data-testid=phone-detail]'
 const navbarSelector = '[data-testid=navbar-logo]'
 describe('phones list', () => {
-  it('can display phones', function() {
+  it('can display phones', () => {
     cy.visit('/')
       .get(cardSelector)
       .first()
@@ -19,7 +19,7 @@ describe('phones list', () => {
 })
 
 describe('phone detail', () => {
-  it('can display phone detail', function() {
+  it('can display phone detail', () => {
     cy.visit('/detail/0')
       .get(detailSelector)
       .first()

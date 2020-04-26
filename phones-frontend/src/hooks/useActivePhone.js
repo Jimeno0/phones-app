@@ -10,7 +10,7 @@ const useActivePhone = (id) => {
 
   useEffect(() => {
     if (isLoading) return
-    const active = phones.find((item) => item.id === id)
+    const active = phones.find((item) => item._id === id)
     dispatch(setActivePhone(active))
   }, [isLoading, id])
 

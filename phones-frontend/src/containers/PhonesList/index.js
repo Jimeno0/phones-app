@@ -9,7 +9,7 @@ const PhonesList = (props) => {
   const history = useHistory()
 
   const handlePhoneClick = (phone) => {
-    history.push(`/detail/${phone.id}`)
+    history.push(`/detail/${phone._id}`)
   }
 
   return (
@@ -21,7 +21,7 @@ const PhonesList = (props) => {
           <PhoneCard
             {...phone}
             onClick={handlePhoneClick}
-            key={phone.id}
+            key={phone._id}
           />
       ))
       }
