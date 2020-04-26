@@ -16,7 +16,7 @@ services:
         build: ./phones-backend 
         ports:
             - "8080:8080"
-        command: ["yarn", "start"]
+        command: sh -c "yarn populate && yarn start"
         depends_on:
             - database
         environment:
