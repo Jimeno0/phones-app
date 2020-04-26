@@ -21,6 +21,7 @@
 
 ### Unit tests
 * Go inside the font app `cd phones-frontend`
+* Run `yarn` to install the depencencies
 * Run `yarn test` to start the unit tests
 
 ### End to end tests
@@ -28,6 +29,7 @@ Note:  you need the app up and running so run one of the previous **Use commands
 
 I.E: `docker-compose -f docker-compose.prod.yml up --build`
 * Go inside the font app `cd phones-frontend`
+* Run `yarn` to install the depencencies
 * Run `yarn e2e` to start the end to end tests
 
 ## Notes
