@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Main, PhoneCard, Loader } from 'components'
 import { usePhones } from 'hooks'
 import { useHistory } from 'react-router-dom'

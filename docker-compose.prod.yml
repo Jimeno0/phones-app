@@ -1,30 +1,27 @@
 version: '3.7'
 services:
     webapp:
-        build: ./phones-frontend 
+        build:
+          context: ./phones-frontend
+          dockerfile: Dockerfile.prod
         ports:
-            - "3000:3000"
-        command: ["yarn", "start"]
+            - "8000:8000"
+        command: ["serve", "-p", "8000", "-s", "build", "-n"]
         depends_on:
             - api
-        volumes: 
-            - ./phones-frontend:/app
-            - /app/node_modules
-        stdin_open: true
 
     api:
-        build: ./phones-backend 
+        build:
+          context: ./phones-backend
+          dockerfile: Dockerfile.prod
         ports:
             - "8080:8080"
-        command: ["yarn", "start"]
+        command: sh -c "yarn populate && yarn serve"
         depends_on:
             - database
         environment:
             - DB_URL='mongodb://database:27017/guidesmiths'
             - PORT=8080
-        volumes: 
-            - ./phones-backend:/app
-            - /app/node_modules
 
     database:
         image: "mongo:3.6.17-xenial"
